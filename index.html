@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+        }
+        .caption {
+            display: none;
+            text-align: center;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #9900ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 0, 0, 0.5);
+            margin: 10px 0;
+            animation: zoomFadeIn 0.3s ease-in-out;
+        }
+        #hii {
+            font-size: 4em;
+        }
+        #hello {
+            font-size: 4em;
+        }
+        #bye {
+            font-size: 3em;
+        }
+        #chaloo {
+            font-size: 4em;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomFadeIn {
+            0%   { opacity: 0; transform: scale(0.5) translateY(50px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 0.5s steps(40, end);
+        }
+    </style>
+</head>
+<body>
+    <div id="hii" class="caption typing">hii</div>
+    <div id="hello" class="caption typing">hello</div>
+    <div id="bye" class="caption typing">bye</div>
+    <div id="chaloo" class="caption typing">chaloooooooo</div>
+
+    <script>
+        // Show hii immediately
+        document.getElementById('hii').style.display = 'block';
+
+        // Show hello and hide hii after 500ms
+        setTimeout(() => {
+            document.getElementById('hii').style.display = 'none';
+            document.getElementById('hello').style.display = 'block';
+        }, 500);
+
+        // Show bye and hide hello after 1000ms
+        setTimeout(() => {
+            document.getElementById('hello').style.display = 'none';
+            document.getElementById('bye').style.display = 'block';
+        }, 1000);
+
+        // Show chaloooooooo and hide bye after 1500ms
+        setTimeout(() => {
+            document.getElementById('bye').style.display = 'none';
+            document.getElementById('chaloo').style.display = 'block';
+        }, 1500);
+
+        // Redirect after 2000ms
+        setTimeout(() => {
+            window.location.href = 'https://youtubein.github.io/2/';
+        }, 2000);
+    </script>
+</body>
+</html>
